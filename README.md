@@ -60,5 +60,16 @@ Request request = new Request(duration, vehicle, customer);
 
 3. *Manage Current Trip List* - Customers who have taken vehicle.
 
+```java
+public static ArrayList<Request> vanRequests = new ArrayList<>();
+public static ArrayList<Request> carRequests = new ArrayList<>();
+public static ArrayList<Request> motorcycleRequests = new ArrayList<>();
+```
+
 4. *Maintain a Waitlist of Requests* - Customers who are waiting for the vehicle.
 
+```java
+public static ArrayList<Request> vanWaitlist = new ArrayList<>();
+public static ArrayList<Request> carWaitlist = new ArrayList<>();
+public static ArrayList<Request> motorcycleWaitlist = new ArrayList<>();
+```
