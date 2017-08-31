@@ -28,14 +28,13 @@ All customers take a ride for random times between 10 - 20 minutes in whole minu
 
 ```java
 
-randomDelay = random.nextInt((10 - 5) + 1) + 5;
+int randomDelay = random.nextInt((10 - 5) + 1) + 5;
 
 Timer timerTask = new Timer();
 
 timerTask.scheduleAtFixedRate(new TimerTask() {
       @Override
-			public void run() {
-      
+      public void run() {
             ....
             randomDelay = random.nextInt((10 - 5) + 1) + 5;
             ....
@@ -44,7 +43,20 @@ timerTask.scheduleAtFixedRate(new TimerTask() {
 
 ```
 
+2. *Random Group Size* for each request
+
+```java
+private static int[] capacities = {2, 4, 7};
+
+int groupSize = capacities[random.nextInt(capacities.length)];
+```
+
 2. *Random Duration* for each request at time intervals from 10 - 20 minutes.
+
+```java
+int duration = random.nextInt((20 - 10) + 1) + 10;
+Request request = new Request(duration, vehicle, customer);
+```
 
 3. *Manage Current Trip List* - Customers who have taken vehicle.
 
