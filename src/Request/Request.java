@@ -1,0 +1,70 @@
+package Request;
+
+import java.sql.Timestamp;
+
+import Customer.Customer;
+import Vehicle.Vehicle;
+
+public class Request {
+
+	private long startTime;
+	private long endTime;
+	private int duration;
+	private int requestId;
+	private Vehicle vehicle;
+	private Customer customer;
+	private static int count = 0;
+
+	public Request(int duration, Vehicle vehicle, Customer customer) {
+		this.customer = customer;
+		this.vehicle = vehicle;
+		this.duration = duration;
+		this.requestId = count;
+		count++;
+	}
+
+	public long getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(long startTime) {
+		this.startTime = startTime;
+	}
+
+	public long getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(long endTime) {
+		this.endTime = endTime;
+	}
+
+	public int getRequestId() {
+		return requestId;
+	}
+
+	public Vehicle getVehicle() {
+		return vehicle;
+	}
+
+	public void setVehicle(Vehicle vehicle) {
+		this.vehicle = vehicle;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
+}
