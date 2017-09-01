@@ -22,7 +22,7 @@ All customers take a ride for random times between 10 - 20 minutes in whole minu
 
 3. Customers of group size 2 always take Motorcycle, group size 4 always take Car and group size 7 always take the Van.
 
-### Prerequisites
+## Prerequisites
 
 To run the code, you need to have following installed in your system:
 
@@ -32,7 +32,7 @@ To run the code, you need to have following installed in your system:
 ## Object Diagram
 ![Object_Diagram](/resources/ObjectDiagram.png "Object Diagram")
 
-### Design Patterns
+## Design Patterns
 
 For the purpose of this code, I have used following design patterns:
 
