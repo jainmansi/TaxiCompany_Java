@@ -26,10 +26,8 @@ All customers take a ride for random times between 10 - 20 minutes in whole minu
 
 To run the code, you need to have following installed in your system:
 
-```
 * Recent version of Java (1.8)
 * An IDE (Eclipse, IntelliJ or Netbeans)
-```
 
 ## Features of Taxi Company
 
@@ -90,10 +88,8 @@ public static ArrayList<Request> motorcycleWaitlist = new ArrayList<>();
 
 For the purpose of this code, I have used following design patterns:
 
-```
-* Strategy Pattern - To be able to select vehicle at runtime
-* Singleton Pattern - Only one instance of request lists and waitlists
-```
+* **Strategy Pattern** - To be able to select vehicle at runtime
+* **Singleton Pattern** - Only one instance of request lists and waitlists
 
 ## Authors
 
