@@ -29,6 +29,16 @@ To run the code, you need to have following installed in your system:
 * Recent version of Java (1.8)
 * An IDE (Eclipse, IntelliJ or Netbeans)
 
+## Object Diagram
+![Object_Diagram](/resources/ObjectDiagram.png "Object Diagram")
+
+### Design Patterns
+
+For the purpose of this code, I have used following design patterns:
+
+* **Strategy Pattern** - To be able to select vehicle at runtime
+* **Singleton Pattern** - Only one instance of request lists and waitlists
+
 ## Features of Taxi Company
 
 1. *Randomly Request Vehicles* at time intervals from 5 - 10 minutes.
@@ -80,16 +90,6 @@ public static ArrayList<Request> vanWaitlist = new ArrayList<>();
 public static ArrayList<Request> carWaitlist = new ArrayList<>();
 public static ArrayList<Request> motorcycleWaitlist = new ArrayList<>();
 ```
-
-## Object Diagram
-![Object_Diagram](/resources/ObjectDiagram.png "Object Diagram")
-
-### Design Patterns
-
-For the purpose of this code, I have used following design patterns:
-
-* **Strategy Pattern** - To be able to select vehicle at runtime
-* **Singleton Pattern** - Only one instance of request lists and waitlists
 
 ## Authors
 
