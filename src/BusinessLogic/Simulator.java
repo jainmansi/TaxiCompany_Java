@@ -91,9 +91,11 @@ public class Simulator {
 
 		RequestList.motorcycleRequests.removeAll(removeMotorCycleRequests);
 	}
+	
 
+	//Method to add incoming vehicle requests
 	private static void addNewRequest(Request request, Vehicle vehicle) {
-
+		
 		if (vehicle instanceof Van) {
 			if (VanDirectory.isAvailable()) {
 				System.out.println("This is Van request");
