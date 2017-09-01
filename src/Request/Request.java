@@ -1,13 +1,10 @@
 package Request;
 
-import java.sql.Timestamp;
-
 import Customer.Customer;
 import Vehicle.Vehicle;
 
 public class Request {
 
-	private long startTime;
 	private long endTime;
 	private int duration;
 	private int requestId;
@@ -21,14 +18,6 @@ public class Request {
 		this.duration = duration;
 		this.requestId = count;
 		count++;
-	}
-
-	public long getStartTime() {
-		return startTime;
-	}
-
-	public void setStartTime(long startTime) {
-		this.startTime = startTime;
 	}
 
 	public long getEndTime() {

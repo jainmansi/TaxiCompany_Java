@@ -16,7 +16,7 @@ public class RequestList {
 	}
 
 	public void setVanRequests(ArrayList<Request> vanRequests) {
-		this.vanRequests = vanRequests;
+		RequestList.vanRequests = vanRequests;
 	}
 
 	public ArrayList<Request> getCarRequests() {
@@ -24,7 +24,7 @@ public class RequestList {
 	}
 
 	public void setCarRequests(ArrayList<Request> carRequests) {
-		this.carRequests = carRequests;
+		RequestList.carRequests = carRequests;
 	}
 
 	public ArrayList<Request> getMotorcycleRequests() {
@@ -32,7 +32,7 @@ public class RequestList {
 	}
 
 	public void setMotorcycleRequests(ArrayList<Request> motorcycleRequests) {
-		this.motorcycleRequests = motorcycleRequests;
+		RequestList.motorcycleRequests = motorcycleRequests;
 	}
 
 	public ArrayList<Request> getVanWaitlist() {
@@ -40,7 +40,7 @@ public class RequestList {
 	}
 
 	public void setVanWaitlist(ArrayList<Request> vanWaitlist) {
-		this.vanWaitlist = vanWaitlist;
+		RequestList.vanWaitlist = vanWaitlist;
 	}
 
 	public ArrayList<Request> getCarWaitlist() {
@@ -48,7 +48,7 @@ public class RequestList {
 	}
 
 	public void setCarWaitlist(ArrayList<Request> carWaitlist) {
-		this.carWaitlist = carWaitlist;
+		RequestList.carWaitlist = carWaitlist;
 	}
 
 	public ArrayList<Request> getMotorcycleWaitlist() {
@@ -56,7 +56,7 @@ public class RequestList {
 	}
 
 	public void setMotorcycleWaitlist(ArrayList<Request> motorcycleWaitlist) {
-		this.motorcycleWaitlist = motorcycleWaitlist;
+		RequestList.motorcycleWaitlist = motorcycleWaitlist;
 	}
 
 }

@@ -1,6 +1,5 @@
 package BusinessLogic;
 
-import java.sql.Timestamp;
 import java.util.Random;
 
 import Customer.Customer;
@@ -9,7 +8,7 @@ import Vehicle.Vehicle;
 
 public class RequestHandler {
 	
-	private static int[] capacities = {2, 4, 7};
+	private static final int[] capacities = {2, 4, 7};
 
 	public static Request generateRequest() {
 		Random random = new Random();

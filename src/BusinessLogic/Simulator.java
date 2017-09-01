@@ -43,7 +43,7 @@ public class Simulator {
 					Request request = RequestHandler.generateRequest();
 					int groupSize = request.getCustomer().getGroupSize();
 					Vehicle vehicle = VehicleHandler.getVehicle(groupSize);
-					randomDelay = random.nextInt((10 - 5) + 1) + 53;
+					randomDelay = random.nextInt((10 - 5) + 1) + 5;
 
 					removeCompletedRequests();
 					addNewRequest(request, vehicle);
@@ -57,6 +57,8 @@ public class Simulator {
 			}
 		}, randomDelay * 1000, randomDelay * 1000);
 	}
+	
+	//Method to remove all the completed trips from request lists
 
 	public static void removeCompletedRequests() {
 
