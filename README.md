@@ -22,6 +22,15 @@ All customers take a ride for random times between 10 - 20 minutes in whole minu
 
 3. Customers of group size 2 always take Motorcycle, group size 4 always take Car and group size 7 always take the Van.
 
+### Prerequisites
+
+To run the code, you need to have following installed in your system:
+
+```
+* Recent version of Java (1.8)
+* An IDE (Eclipse, IntelliJ or Netbeans)
+```
+
 ## Features of Taxi Company
 
 1. *Randomly Request Vehicles* at time intervals from 5 - 10 minutes.
@@ -73,3 +82,19 @@ public static ArrayList<Request> vanWaitlist = new ArrayList<>();
 public static ArrayList<Request> carWaitlist = new ArrayList<>();
 public static ArrayList<Request> motorcycleWaitlist = new ArrayList<>();
 ```
+
+## Object Diagram
+![Object_Diagram](/resources/ObjectDiagram.png "Object Diagram")
+
+### Design Patterns
+
+For the purpose of this code, I have used following design patterns:
+
+```
+* Strategy Pattern - To be able to select vehicle at runtime
+* Singleton Pattern - Only one instance of request lists and waitlists
+```
+
+## Authors
+
+* **Mansi Jain** - [Online Portfolio](https://jainmansi.com)
