@@ -3,10 +3,12 @@ package Vehicle;
 import java.util.ArrayList;
 
 import BusinessLogic.Constants;
+import Request.RequestList;
 
 public class VanDirectory {
 
 	private static ArrayList<Van> vanList = new ArrayList<>();
+	private static RequestList requestList = RequestList.getInstance();
 	
 	public static Van addVan() {
 		Van van = new Van();
@@ -15,6 +17,6 @@ public class VanDirectory {
 	}
 	
 	public static boolean isAvailable() {
-		return (Constants.NUM_VANS - vanList.size()) != 0;
+		return (Constants.NUM_VANS - requestList.getVanRequests().size()) != 0;
 	}
 }

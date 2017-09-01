@@ -21,10 +21,12 @@ public class Simulator {
 	private static Random random;
 	private static int randomDelay = 0;
 	private static int totalCount = 0;
+	private static RequestList requestList;
 
 	public static void init() {
 		random = new Random();
 		randomDelay = random.nextInt((10 - 5) + 1) + 5;
+		requestList = RequestList.getInstance();
 	}
 
 	public static void main(String args[]) {
@@ -66,30 +68,30 @@ public class Simulator {
 		List<Request> removeCarRequests = new ArrayList<>();
 		List<Request> removeMotorCycleRequests = new ArrayList<>();
 
-		for (Request request : RequestList.vanRequests) {
+		for (Request request : requestList.getVanRequests()) {
 			if (System.currentTimeMillis() > request.getEndTime()) {
 				removeVanRequests.add(request);
 				System.out.println("+1 Van Request Completed");
 			}
 		}
 
-		RequestList.vanRequests.removeAll(removeVanRequests);
+		requestList.getVanRequests().removeAll(removeVanRequests);
 
-		for (Request request : RequestList.carRequests) {
+		for (Request request : requestList.getCarRequests()) {
 			if (System.currentTimeMillis() > request.getEndTime()) {
 				removeCarRequests.add(request);
 			}
 		}
 
-		RequestList.carRequests.removeAll(removeCarRequests);
+		requestList.getCarRequests().removeAll(removeCarRequests);
 
-		for (Request request : RequestList.motorcycleRequests) {
+		for (Request request : requestList.getMotorcycleRequests()) {
 			if (System.currentTimeMillis() > request.getEndTime()) {
 				removeMotorCycleRequests.add(request);
 			}
 		}
 
-		RequestList.motorcycleRequests.removeAll(removeMotorCycleRequests);
+		requestList.getMotorcycleRequests().removeAll(removeMotorCycleRequests);
 	}
 	
 
@@ -100,29 +102,29 @@ public class Simulator {
 			if (VanDirectory.isAvailable()) {
 				System.out.println("This is Van request");
 				request.setEndTime(System.currentTimeMillis() + request.getDuration() * 1000);
-				RequestList.vanRequests.add(request);
-				System.out.println("Total Van requests " + RequestList.vanRequests.size());
+				requestList.getVanRequests().add(request);
+				System.out.println("Total Van requests " + requestList.getVanRequests().size());
 			} else {
 				System.out.println("Request added to Van Waitlist");
-				RequestList.vanWaitlist.add(request);
+				requestList.getVanWaitlist().add(request);
 			}
 		} else if (vehicle instanceof Car) {
 			if (CarDirectory.isAvailable()) {
 				System.out.println("This is Car request");
 				request.setEndTime(System.currentTimeMillis() + request.getDuration() * 1000);
-				RequestList.carRequests.add(request);
+				requestList.getCarRequests().add(request);
 			} else {
 				System.out.println("Request add to Car Waitlist");
-				RequestList.carWaitlist.add(request);
+				requestList.getCarWaitlist().add(request);
 			}
 		} else if (vehicle instanceof Motorcycle) {
 			if (MotorCycleDirectory.isAvailable()) {
 				System.out.println("This is Motorcycle request");
 				request.setEndTime(System.currentTimeMillis() + request.getDuration() * 1000);
-				RequestList.motorcycleRequests.add(request);
+				requestList.getMotorcycleRequests().add(request);
 			} else {
 				System.out.println("Request added to MotorCycle waitlist");
-				RequestList.motorcycleWaitlist.add(request);
+				requestList.getMotorcycleWaitlist().add(request);
 			}
 		}
 	}
@@ -133,44 +135,44 @@ public class Simulator {
 		List<Request> removeCarRequests = new ArrayList<>();
 		List<Request> removeMotorCycleRequests = new ArrayList<>();
 		
-		for (Request request : RequestList.vanWaitlist) {
+		for (Request request : requestList.getVanWaitlist()) {
 			if (VanDirectory.isAvailable()) {
 				System.out.println("Request removed from Van waitlist");
 				removeVanRequests.add(request);
-				RequestList.vanRequests.add(request);
+				requestList.getVanRequests().add(request);
 			} else
 				break;
 		}
 		
-		RequestList.vanWaitlist.removeAll(removeVanRequests);
+		requestList.getVanWaitlist().removeAll(removeVanRequests);
 
-		for (Request request : RequestList.carWaitlist) {
+		for (Request request : requestList.getCarWaitlist()) {
 
 			if (CarDirectory.isAvailable()) {
 				System.out.println("Request removed from Car waitlist");
 				removeCarRequests.add(request);
-				RequestList.carRequests.add(request);
+				requestList.getCarRequests().add(request);
 			} else
 				break;
 		}
 		
-		RequestList.carWaitlist.removeAll(removeCarRequests);
+		requestList.getCarWaitlist().removeAll(removeCarRequests);
 
-		for (Request request : RequestList.motorcycleWaitlist) {
+		for (Request request : requestList.getMotorcycleWaitlist()) {
 			if (MotorCycleDirectory.isAvailable()) {
 				System.out.println("Request removed from MotorCycle waitlist");
 				removeMotorCycleRequests.add(request);
-				RequestList.motorcycleRequests.add(request);
+				requestList.getMotorcycleRequests().add(request);
 			} else
 				break;
 		}
 		
-		RequestList.motorcycleWaitlist.removeAll(removeMotorCycleRequests);
+		requestList.getMotorcycleWaitlist().removeAll(removeMotorCycleRequests);
 	}
 	
 	private static void printTotalAvailable() {
-		System.out.println("Total Number of Vans Available " + (Constants.NUM_VANS - RequestList.vanRequests.size()));
-		System.out.println("Total Number of Cars Available " + (Constants.NUM_CARS - RequestList.carRequests.size()));
-		System.out.println("Total Number of MotorCycle Available " + (Constants.NUM_MOTORCYCLES - RequestList.motorcycleWaitlist.size()));
+		System.out.println("Total Number of Vans Available " + (Constants.NUM_VANS - requestList.getVanRequests().size()));
+		System.out.println("Total Number of Cars Available " + (Constants.NUM_CARS - requestList.getCarRequests().size()));
+		System.out.println("Total Number of MotorCycle Available " + (Constants.NUM_MOTORCYCLES - requestList.getMotorcycleWaitlist().size()));
 	}
 }

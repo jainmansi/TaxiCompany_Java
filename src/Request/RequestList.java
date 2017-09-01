@@ -4,12 +4,23 @@ import java.util.ArrayList;
 
 public class RequestList {
 
-	public static ArrayList<Request> vanRequests = new ArrayList<>();
-	public static ArrayList<Request> carRequests = new ArrayList<>();
-	public static ArrayList<Request> motorcycleRequests = new ArrayList<>();
-	public static ArrayList<Request> vanWaitlist = new ArrayList<>();
-	public static ArrayList<Request> carWaitlist = new ArrayList<>();
-	public static ArrayList<Request> motorcycleWaitlist = new ArrayList<>();
+	private static ArrayList<Request> vanRequests = new ArrayList<>();
+	private static ArrayList<Request> carRequests = new ArrayList<>();
+	private static ArrayList<Request> motorcycleRequests = new ArrayList<>();
+	private static ArrayList<Request> vanWaitlist = new ArrayList<>();
+	private static ArrayList<Request> carWaitlist = new ArrayList<>();
+	private static ArrayList<Request> motorcycleWaitlist = new ArrayList<>();
+	
+	private static RequestList requestList;
+	
+	private RequestList(){
+		
+	}
+	
+	public static RequestList getInstance(){
+		requestList = new RequestList();
+		return requestList;
+	}
 
 	public ArrayList<Request> getVanRequests() {
 		return vanRequests;
