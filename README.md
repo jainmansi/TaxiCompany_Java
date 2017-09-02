@@ -27,7 +27,14 @@ All customers take a ride for random times between 10 - 20 minutes in whole minu
 To run the code, you need to have following installed in your system:
 
 * Recent version of Java (1.8)
-* An IDE (Eclipse, IntelliJ or Netbeans)
+* Maven
+
+## Setup
+
+1. Install latest version of [Maven](https://maven.apache.org)
+2. Check if the Maven is installed correctly - ``` maven --version ```
+3. Create the Maven package - ``` mvn package ```
+4. Run the project - ``` mvn exec:java ```
 
 ## Object Diagram
 ![Object_Diagram](/resources/ObjectDiagram.png "Object Diagram")
