@@ -37,7 +37,7 @@ To run the code, you need to have following installed in your system:
 For the purpose of this code, I have used following design patterns:
 
 * **Strategy Pattern** - To be able to select vehicle at runtime
-* **Singleton Pattern** - Only one instance of request lists and waitlists
+* **Singleton Pattern** - Only one instance of each of request lists and waitlists
 
 ## Features of Taxi Company
 
@@ -78,17 +78,17 @@ Request request = new Request(duration, vehicle, customer);
 3. *Manage Current Trip List* - Customers who have taken vehicle.
 
 ```java
-public static ArrayList<Request> vanRequests = new ArrayList<>();
-public static ArrayList<Request> carRequests = new ArrayList<>();
-public static ArrayList<Request> motorcycleRequests = new ArrayList<>();
+private static ArrayList<Request> vanRequests = new ArrayList<>();
+private static ArrayList<Request> carRequests = new ArrayList<>();
+private static ArrayList<Request> motorcycleRequests = new ArrayList<>();
 ```
 
 4. *Maintain a Waitlist of Requests* - Customers who are waiting for the vehicle.
 
 ```java
-public static ArrayList<Request> vanWaitlist = new ArrayList<>();
-public static ArrayList<Request> carWaitlist = new ArrayList<>();
-public static ArrayList<Request> motorcycleWaitlist = new ArrayList<>();
+private static ArrayList<Request> vanWaitlist = new ArrayList<>();
+private static ArrayList<Request> carWaitlist = new ArrayList<>();
+private static ArrayList<Request> motorcycleWaitlist = new ArrayList<>();
 ```
 
 ## Authors
